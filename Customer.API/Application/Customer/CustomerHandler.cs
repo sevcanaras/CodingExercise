@@ -15,6 +15,8 @@ namespace Customer.API.Application.Customer
 
         public IEnumerable<CreatedCustomer> AddCustomers(IEnumerable<CreateCustomerCommand> customersCommand)
         {
+            //TODO:Add Sorting implementation for customers
+            //TODO:Add Id duplication check
             var newCustomers = _mapper.Map<IEnumerable<Domain.Entities.Customer>>(customersCommand);
             var existingCustomers = _customerRepository.GetAll();
 
